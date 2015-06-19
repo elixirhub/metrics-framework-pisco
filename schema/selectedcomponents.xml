@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<selectedcomponents>
+  <component>
+    <id>metrics-module-citation-4ywN_j5H</id>
+    <name>metrics-module-citation</name>
+    <frequency>minute</frequency>
+    <enable>true</enable>
+    <installed>true</installed>
+    <input>
+      <parameter>swissprot,swiss prot,swiss-prot,UniProtKB,uniprot</parameter>
+    </input>
+    <executable>test/testcitations.js</executable>
+    <dependencies>
+      <library>xml2js</library>
+    </dependencies>
+    <repository>https://github.com/elixirhub/metrics-module-citation.git</repository>
+  </component>
+</selectedcomponents>

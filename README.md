@@ -1,2 +1,2 @@
 # metrics-framework-data-monitoring-repository
-This Repository collects data coming from a set of components registered into the Components Repository; also it makes available these data for different users.
+This Repository install and execute a set of components registered. Also, collects data coming from these components, into the Components Repository.

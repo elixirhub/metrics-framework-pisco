@@ -4,6 +4,7 @@
     <id>metrics-module-citation-4ywN_j5H</id>
     <name>metrics-module-citation</name>
     <frequency>minute</frequency>
+    <resource>database</resource>
     <enable>true</enable>
     <installed>true</installed>
     <input>

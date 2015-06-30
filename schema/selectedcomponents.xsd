@@ -12,6 +12,7 @@
 							<xs:element name="id" type="xs:string"/>
 							<xs:element name="name" type="xs:string"/>
 							<xs:element name="frequency" type="xs:string"/>
+							<xs:element name="resource" type="xs:string"/>
 							<xs:element name="enable" type="xs:string"/>
 							<xs:element name="installed" type="xs:string"/>
 							<xs:element name="input">

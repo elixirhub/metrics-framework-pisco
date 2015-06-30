@@ -32,3 +32,4 @@ module.exports.SOURCEPATH = 'components';
 module.exports.SELECTEDCOMPONENTSXML = 'schema/selectedcomponents.xml';
 module.exports.SELECTEDCOMPONENTSXSD = 'schema/selectedcomponents.xsd';
 module.exports.SELECTEDCOMPONENTSXSL = 'schema/selectedcomponents.xsl';
+

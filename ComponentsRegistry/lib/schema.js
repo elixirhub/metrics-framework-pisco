@@ -143,7 +143,7 @@ function modifyComponentDataXML(newcomponents,callback){
 	* Get component unique ID composed for name+unique_number
 	* @param {string} name - Component name.
 	*/
-function generateComponentID(name) {console.log(name);
+function generateComponentID(name) {
 		return id = name+'-'+shortid.generate();
  }
 

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<components_metrics>
+  <component>
+    <name>Metric name</name>
+    <description>A brief description about this metric</description>
+    <authors>TGAC, EBI, ELIXIR</authors>
+    <input>
+      <parameter>parameters to execute this component</parameter>
+    </input>
+    <output>number, string, date, object, etc.</output>
+    <dependencies>
+      <library>libraries to install this component</library>
+    </dependencies>
+    <frequency>execution time interval</frequency>
+    <resources>
+      <rsc>database, software, computational, etc.</rsc>
+    </resources>
+    <repository>https://github.com/metric-repository</repository>
+    <id>unique id</id>
+    <version>alfa, beta, comercial, production, etc.</version>
+    <lastupdate>2012-12-13T12:12:12</lastupdate>
+  </component>
+  <component>
+    <name>metrics-module-tweets</name>
+    <description>Topic spread</description>
+    <authors>Artaza Haydee, Manuel Corpas, Rafael Jimenez</authors>
+    <input>
+      <parameter>github</parameter>
+    </input>
+    <output>list</output>
+    <dependencies>
+      <library>oauth</library>
+    </dependencies>
+    <frequency>monthly</frequency>
+    <resources>
+      <rsc>software</rsc>
+    </resources>
+    <repository>https://github.com/elixirhub/metrics-module-tweets.git</repository>
+    <id>metrics-module-tweets-4J0BTmNQx</id>
+    <version>final</version>
+    <lastupdate>6/10/2015</lastupdate>
+  </component>
+  <component>
+    <name>metrics-module-tweets</name>
+    <description>Topic spread</description>
+    <authors>Artaza Haydee, Manuel Corpas, Rafael Jimenez</authors>
+    <input>
+      <parameter>github</parameter>
+    </input>
+    <output>list</output>
+    <dependencies>
+      <library>oauth</library>
+    </dependencies>
+    <frequency>monthly</frequency>
+    <resources>
+      <rsc>software</rsc>
+    </resources>
+    <repository>https://github.com/elixirhub/metrics-module-tweets.git</repository>
+    <id>metrics-module-tweets-EyBLa7N7l</id>
+    <version>final</version>
+    <lastupdate>6/10/2015</lastupdate>
+  </component>
+  <component>
+    <name>metrics-module-tweets</name>
+    <description>Topic spread</description>
+    <authors>Artaza Haydee, Manuel Corpas, Rafael Jimenez</authors>
+    <input>
+      <parameter>github</parameter>
+    </input>
+    <output>list</output>
+    <dependencies>
+      <library>oauth</library>
+    </dependencies>
+    <frequency>monthly</frequency>
+    <resources>
+      <rsc>software</rsc>
+    </resources>
+    <repository>https://github.com/elixirhub/metrics-module-tweets.git</repository>
+    <id>metrics-module-tweets-41hLa7Emx</id>
+    <version>final</version>
+    <lastupdate>6/10/2015</lastupdate>
+  </component>
+  <component>
+    <name>metrics-module-tweets</name>
+    <description>Topic spread</description>
+    <authors>Artaza Haydee, Manuel Corpas, Rafael Jimenez</authors>
+    <input>
+      <parameter>github</parameter>
+    </input>
+    <output>list</output>
+    <dependencies>
+      <library>oauth</library>
+    </dependencies>
+    <frequency>monthly</frequency>
+    <resources>
+      <rsc>software</rsc>
+    </resources>
+    <repository>https://github.com/elixirhub/metrics-module-tweets.git</repository>
+    <id>metrics-module-tweets-NJMD67VQl</id>
+    <version>final</version>
+    <lastupdate>6/10/2015</lastupdate>
+  </component>
+  <component>
+    <name>metrics-module-citation</name>
+    <description>Citations in publications</description>
+    <authors>Artaza Haydee, Manuel Corpas, Rafael Jimenez</authors>
+    <input>
+      <parameter>swissprot,swiss prot,swiss-prot,UniProtKB,uniprot</parameter>
+    </input>
+    <output>number</output>
+    <dependencies>
+      <library>xml2js</library>
+    </dependencies>
+    <frequency>monthly</frequency>
+    <resources>
+      <rsc>database</rsc>
+    </resources>
+    <repository>https://github.com/elixirhub/metrics-module-citation.git</repository>
+    <id>metrics-module-citation-4yyFa7VQx</id>
+    <version>final</version>
+    <lastupdate>6/10/2015</lastupdate>
+  </component>
+  <component>
+    <name>metrics-module-citation</name>
+    <description>Citations in publications</description>
+    <authors>Artaza Haydee, Manuel Corpas, Rafael Jimenez</authors>
+    <input>
+      <parameter>swissprot,swiss prot,swiss-prot,UniProtKB,uniprot</parameter>
+    </input>
+    <output>number</output>
+    <dependencies>
+      <library>xml2js</library>
+    </dependencies>
+    <frequency>monthly</frequency>
+    <resources>
+      <rsc>database</rsc>
+    </resources>
+    <repository>https://github.com/elixirhub/metrics-module-citation.git</repository>
+    <id>metrics-module-citation-4kMKaQVQx</id>
+    <version>final</version>
+    <lastupdate>6/10/2015</lastupdate>
+  </component>
+  <component>
+    <name>metrics-module-citation</name>
+    <description>Citations in publications</description>
+    <authors>Artaza Haydee, Manuel Corpas, Rafael Jimenez</authors>
+    <input>
+      <parameter>swissprot,swiss prot,swiss-prot,UniProtKB,uniprot</parameter>
+    </input>
+    <output>number</output>
+    <dependencies>
+      <library>xml2js</library>
+    </dependencies>
+    <frequency>monthly</frequency>
+    <resources>
+      <rsc>database</rsc>
+    </resources>
+    <repository>https://github.com/elixirhub/metrics-module-citation.git</repository>
+    <id>metrics-module-citation-EJOFpX4Ql</id>
+    <version>final</version>
+    <lastupdate>6/10/2015</lastupdate>
+  </component>
+  <component>
+    <name>metrics-module-citation</name>
+    <description>Citations in publications</description>
+    <authors>Artaza Haydee, Manuel Corpas, Rafael Jimenez</authors>
+    <input>
+      <parameter>swissprot,swiss prot,swiss-prot,UniProtKB,uniprot</parameter>
+    </input>
+    <output>number</output>
+    <dependencies>
+      <library>xml2js</library>
+    </dependencies>
+    <frequency>monthly</frequency>
+    <resources>
+      <rsc>database</rsc>
+    </resources>
+    <repository>https://github.com/elixirhub/metrics-module-citation.git</repository>
+    <id>metrics-module-citation-VJ6K67Nme</id>
+    <version>final</version>
+    <lastupdate>6/10/2015</lastupdate>
+  </component>
+</components_metrics>

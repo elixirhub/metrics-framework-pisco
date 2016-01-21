@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.bgimg {
+    background-image: url('../images/registry.png'); 
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+}
+
+div.columns       { width: 600px;  margin: 10 auto;}
+div.columns div   { float: left; }
+div.grey          { background-color: #cccccc; }
+div.white         { background-color: #ffffff; }
+div.clear         { clear: both; }
+

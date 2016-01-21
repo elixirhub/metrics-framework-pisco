@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css"/>
+<html>
+  <body>
+    <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta name="description" content=""/>
+      <meta name="author" content=""/>
+      <link rel="icon" href="icons/registry.ico"/>
+      <title>Component Registry</title>
+      <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+      <link href="bootstrap/registry-template.css" rel="stylesheet"/>
+      <script src="bootstrap/assets/js/ie-emulation-modes-warning.js">
+        
+      </script>
+    </head>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"/>
+            <span class="icon-bar"/>
+            <span class="icon-bar"/>
+          </button>
+          <a class="navbar-brand" href="#">Metrics Registry</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="page-header">
+        <h1>Component Registry</h1>
+      </div>
+      <div id="well">
+        <form action="http://127.0.0.1:8082/registercomponent" method="post">
+          <label for="schema">URL Component Schema:</label>
+          <input type="text" id="schema" name="schema" placeholder="Enter the URL for the component to register" size="100"/>
+          <button type="submit" class="btn btn-default btn-sm active">Register</button>
+          <span class="help-block">Example: https://raw.githubusercontent.com/project/metrics-module/master/schema.xml</span>
+        </form>
+      </div>
+      <div class="page-header">
+        <h2/>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Authors</th>
+            <th>Frequency</th>
+            <th>Repository</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>Metric name</td>
+          <td>A brief description about this metric</td>
+          <td>TGAC, EBI, ELIXIR</td>
+          <td>execution time interval</td>
+          <td>https://github.com/metric-repository</td>
+        </tr>
+        <tr>
+          <td>metrics-module-tweets</td>
+          <td>Topic spread</td>
+          <td>Artaza Haydee, Manuel Corpas, Rafael Jimenez</td>
+          <td>monthly</td>
+          <td>https://github.com/elixirhub/metrics-module-tweets.git</td>
+        </tr>
+        <tr>
+          <td>metrics-module-tweets</td>
+          <td>Topic spread</td>
+          <td>Artaza Haydee, Manuel Corpas, Rafael Jimenez</td>
+          <td>monthly</td>
+          <td>https://github.com/elixirhub/metrics-module-tweets.git</td>
+        </tr>
+        <tr>
+          <td>metrics-module-tweets</td>
+          <td>Topic spread</td>
+          <td>Artaza Haydee, Manuel Corpas, Rafael Jimenez</td>
+          <td>monthly</td>
+          <td>https://github.com/elixirhub/metrics-module-tweets.git</td>
+        </tr>
+        <tr>
+          <td>metrics-module-tweets</td>
+          <td>Topic spread</td>
+          <td>Artaza Haydee, Manuel Corpas, Rafael Jimenez</td>
+          <td>monthly</td>
+          <td>https://github.com/elixirhub/metrics-module-tweets.git</td>
+        </tr>
+        <tr>
+          <td>metrics-module-citation</td>
+          <td>Citations in publications</td>
+          <td>Artaza Haydee, Manuel Corpas, Rafael Jimenez</td>
+          <td>monthly</td>
+          <td>https://github.com/elixirhub/metrics-module-citation.git</td>
+        </tr>
+        <tr>
+          <td>metrics-module-citation</td>
+          <td>Citations in publications</td>
+          <td>Artaza Haydee, Manuel Corpas, Rafael Jimenez</td>
+          <td>monthly</td>
+          <td>https://github.com/elixirhub/metrics-module-citation.git</td>
+        </tr>
+        <tr>
+          <td>metrics-module-citation</td>
+          <td>Citations in publications</td>
+          <td>Artaza Haydee, Manuel Corpas, Rafael Jimenez</td>
+          <td>monthly</td>
+          <td>https://github.com/elixirhub/metrics-module-citation.git</td>
+        </tr>
+        <tr>
+          <td>metrics-module-citation</td>
+          <td>Citations in publications</td>
+          <td>Artaza Haydee, Manuel Corpas, Rafael Jimenez</td>
+          <td>monthly</td>
+          <td>https://github.com/elixirhub/metrics-module-citation.git</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+h4 {
+  margin-top: 25px;
+}
+.row {
+  margin-bottom: 20px;
+}
+.row .row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #D8D8D8;
+  background-color: rgba(216,216,216,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);
+}
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+ /* priority to bootstrap.min.css  instead bootstrap-combined.min.css  ---> search table*/
+.btn-group > .btn, .btn-group > .dropdown-menu, .btn-group > .popover {
+    font-size: 10px;
+}
+
+/* priority to bootstrap.min.css  instead bootstrap-combined.min.css   ----> date picker*/
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    display: inline-block;
+    height: 30px !important;
+    
+}
+
+.input-append .add-on, .input-prepend .add-on {
+    height: 30px !important;
+}
+
+/* modal width and background bootbox dialogs*/
+
+.modal {
+    width: 700px !important;
+    background-color: transparent !important;
+}

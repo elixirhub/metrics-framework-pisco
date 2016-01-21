@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="icons/metrics.ico"/>
+
+	<!-- datepicker -->
+	 <link href="bootstrap/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+
+    <title>PIsCO</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/css/metrics-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
+
+	 <!-- graphic library -->
+	 <script type="text/javascript" src="js/jscharts.js"></script>
+	
+
+	<!-- script -->
+
+	<script type="text/javascript"
+     src="js/jquery.min.js">
+    </script> 
+    <script type="text/javascript"
+     src="bootstrap/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+     src="bootstrap/js/bootstrap-datetimepicker.min.js">
+    </script>
+	 <script type="text/javascript">
+		//******datepicker*****//
+		  $(function() {
+			 $('#datetimepickerstart').datetimepicker({
+				pickTime: false
+			 });
+			 
+		  });
+		  $(function() {
+			 $('#datetimepickerend').datetimepicker({
+				pickTime: false
+			 });
+		  });
+
+		$(function () {
+        var pickerstart = $('#datetimepickerstart').data('datetimepicker');
+		  var pickerend = $('#datetimepickerend').data('datetimepicker');
+		
+		//  document.getElementById('datestart').value = pickerstart.getDate();//format("yy-mm-dd");
+		//  document.getElementById('dateend').value = pickerend.getDate();
+		  $("#datetimepickerstart").on('changeDate', function(e) {
+			   if( pickerend.getDate() < e.date){
+					alert("End date is lower than start date!!!");
+					
+				}
+		  });
+		 $("#datetimepickerend").on('changeDate', function(e) {
+			   if( pickerstart.getDate() > e.date){
+					alert("End date is lower than start date!!!");
+					
+				}
+		  });
+		});
+		
+  		
+
+	</script>
+
+
+<!-- script -->
+
+  </head>
+
+  <body>
+    <div class="container">
+		<button type = "submit" class = "btn btn-link" onclick="location.href='http://127.0.0.1:8083/availablecomponents';">
+			&lt;&lt;Back
+		</button>
+      <div class="page-header">
+        <h1>{{name}}</h1>
+        <p class="lead">{{description}}.</p>
+      </div>
+
+		<div class="row row-centered">
+			<div class="col-md-8" style="background-color: white; border: none" >
+				 <div id="graphic" class="white">Loanding</div>
+				 <script>
+					var datagraphic = {{data}}; 
+					var xlabels = new Array({{{xlabels}}});
+					var myChart = new JSChart('graphic', 'line');
+					myChart.setDataArray(datagraphic);
+					myChart.setTitle({{{title}}});
+					myChart.setTitleColor('#8E8E8E');
+					myChart.setTitleFontSize(11);
+					myChart.setAxisNameX('');
+					myChart.setShowXValues(false);
+					myChart.setAxisNameY({{{ytitle}}});
+					for (i in xlabels[0]){
+						myChart.setLabelX(xlabels[0][i]);
+					}
+					myChart.setAxisColor('#C4C4C4');
+					myChart.setAxisValuesColor('#343434');
+					myChart.setAxisPaddingLeft(100);
+					myChart.setAxisPaddingRight(120);
+					myChart.setAxisPaddingTop(50);
+					myChart.setAxisPaddingBottom(80);
+					myChart.setAxisValuesNumberX(5);
+					myChart.setAxisValuesAngle(45);
+					myChart.setGraphExtend(true);
+					myChart.setGridColor('#c2c2c2');
+					myChart.setLineWidth(6);
+					myChart.setLineColor('#9F0505');
+					myChart.setSize(700, 400);
+					//myChart.setBackgroundImage('chart_bg.jpg');
+					myChart.draw();
+				</script>
+			</div><!-- div col-md-8 -->
+
+      	<div class="col-md-4" style="background-color: white; border: none">
+				<div class="well">
+       			<p><strong>Resource name:</strong> {{resourcename}}</p>
+					<strong>Resource type:</strong> {{resourcetype}}
+     			</div> <!-- div well -->
+				<form method="post" action="http://127.0.0.1:8083/metricdetail">
+					Graphic filters:
+					<div class="well">Monitoring start date:
+					  <div id="datetimepickerstart" class="input-append date">
+						 <input id="datestart"  name="datestart" data-format="yyyy-MM-dd" type="text" value="{{datestart}}"></input>
+						 <span class="add-on">
+							<i data-time-icon="icon-time" data-date-icon="icon-calendar">
+							</i>
+						 </span>
+					  </div>
+				 	</div> <!-- div well -->
+					<div class="well">Monitoring end date:
+					  <div id="datetimepickerend" class="input-append">
+						 <input id="dateend" name="dateend" data-format="yyyy-MM-dd" type="text" value="{{dateend}}"></input>
+						 <span class="add-on">
+							<i data-time-icon="icon-time" data-date-icon="icon-calendar">
+							</i>
+						 </span>
+					  </div>
+			 		</div> <!-- div well -->
+					<!--<div class="well">Interval:
+						<select class="selectpicker" data-style="btn-primary">
+						  <option>minute</option>
+						  <option>week</option>
+						  <option>month</option>
+						  <option>year</option>
+						</select>
+					</div>-->
+						<button type="submit" class="btn btn-sm btn-success">Apply filters</button>
+						<input type="hidden" id="idcomponent" name="idcomponent" value="{{idcomponent}}"/>
+						<input type="hidden" id="name" name="name" value="{{name}}"/>
+						<input type="hidden" id="description" name="description" value="{{description}}"/>
+						<input type="hidden" id="resourcename" name="resourcename" value="{{resourcename}}"/>
+						<input type="hidden" id="resourcetype" name="resourcetype" value="{{resourcetype}}"/>
+				</form>
+			</div> <!-- div col-md-4-->
+		</div> <!-- div row-->
+		<button type="button" class="btn btn-primary" id="jsondown">Download JSON</button>
+		<script>
+			$("#jsondown").bind("click",function(){
+				 var href = "data:application/octet-stream," + encodeURIComponent(JSON.stringify({{data}}));
+				 location.href = href;
+				 return true;
+			});
+		</script>
+		<button type="button" class="btn  btn-info">Download CSV</button>
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

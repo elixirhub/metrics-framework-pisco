@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  
+
+   <link rel="icon" href="icons/metrics.ico"/>
+   <title>Pisco</title>
+
+	<!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+	<!-- Date picker CSS -->
+	<link href="bootstrap/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+	<!-- Custom  CSS -->
+	<link href="bootstrap/css/metrics-template.css" rel="stylesheet">
+	
+	<!-- bootstrap table -->
+	<script src="js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/bootstrap-table.js"></script>
+	<script src="bootstrap/js/extension/bootstrap-table-filter.js"></script>
+	<script src="bootstrap/js/bootstrap-table-filter.js"></script>
+	<script src="bootstrap/js/bs-table.js"></script>
+	<!-- bootstrap table -->
+
+	<!-- bootbox dialog -->
+	<script type="text/javascript" src="bootstrap/js/bootbox.min.js"></script>
+	<!-- bootbox dialog -->
+
+
+	<!-- date picker -->
+	<script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<!-- date picker -->
+
+	<!-- graphic library -->
+	 <script type="text/javascript" src="js/d3.v3.min.js"></script>
+	 <script type="text/javascript" src="js/reqwest.min.js"></script>
+	<!-- graphic library-->
+	
+	<script type="text/javascript">
+
+	//<------------global variable-------->
+		var selectedmetrics = {};
+		
+	//<------------global variable-------->	
+
+	//<------------date picker-------->
+		$(function() {
+			 $('#datetimepickerstart').datetimepicker({
+				pickTime: false
+			 });
+			 
+		  });
+		  $(function() {
+			 $('#datetimepickerend').datetimepicker({
+				pickTime: false
+			 });
+		  });
+
+		$(function () {
+        var pickerstart = $('#datetimepickerstart').data('datetimepicker');
+		  var pickerend = $('#datetimepickerend').data('datetimepicker');
+		
+		//  document.getElementById('datestart').value = pickerstart.getDate();//format("yy-mm-dd");
+		//  document.getElementById('dateend').value = pickerend.getDate();
+		  $("#datetimepickerstart").on('changeDate', function(e) {
+			   if( pickerend.getDate() < e.date){
+					bootbox.alert("End date is lower than start date!!!");
+					
+				}
+		  });
+		 $("#datetimepickerend").on('changeDate', function(e) {
+			   if( pickerstart.getDate() > e.date){
+					bootbox.alert("End date is lower than start date!!!!");
+					
+				}
+		  });
+		});
+
+		 
+
+	 //<------------date picker-------->
+
+	 //<------------graphic with ajax and d3js-------->
+
+		function updateGraphic(){
+			var $table = $('#events-table');
+			
+			if($table.bootstrapTable('getSelections').length==0){
+				bootbox.alert("Must select one or more rows!!!");
+			}else if(document.getElementById('datestart').value == '' || document.getElementById('dateend').value == ''){
+				bootbox.alert("You must choose start and end date!!!");
+			}else {
+				reqwest({
+					url: "http://127.0.0.1:8083/monitoringallmetrics" ,
+					method: 'get' ,
+					timeout: 1000 * 5,
+					data: {
+								selectedmetrics : JSON.stringify(selectedmetrics), 
+								datestart : document.getElementById('datestart').value, 
+								dateend: document.getElementById('dateend').value ,
+								grouptype: document.getElementById('grouptype').value },
+					error: function (err) {
+						alert(err);
+					} ,
+					success: function (resp) {
+						//alert(JSON.stringify(resp));
+						graphD3js(resp);
+					
+					}
+				});// reqwest end
+			}// else end
+
+		}
+		$(function() {
+			 graphD3js([]);
+		});
+		
+		function graphD3js(data){
+			var ytitle = '';
+			//alert(JSON.stringify(data));
+			d3.select("svg").remove();// remove old graphics
+
+			var margin = {top: 10, right: 20, bottom: 100, left: 40},
+    		width = 700 - margin.left - margin.right,
+    		height = 500 - margin.top - margin.bottom;
+
+			var x0 = d3.scale.ordinal()
+				 .rangeRoundBands([0, width], .1);
+
+			var x1 = d3.scale.ordinal();
+
+			var y = d3.scale.linear()
+				 .range([height, 0]);
+
+			var color = d3.scale.ordinal()
+				 .range(["#ff8c00", "#d0743c", "#a05d56", "#6b486b", "#7b6888", "#8a89a6", "#98abc5"]);
+
+			var xAxis = d3.svg.axis()
+				 .scale(x0)
+				 .orient("bottom");
+
+			var yAxis = d3.svg.axis()
+				 .scale(y)
+				 .orient("left")
+				 .tickFormat(d3.format(".2s"));
+
+			var svg = d3.select("#graphic").append("svg")
+				 .attr("width", width + margin.left + margin.right)
+				 .attr("height", height + margin.top + margin.bottom)
+			  .append("g")
+				 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+			if(document.getElementById('grouptype').value == 'Metric'){
+				var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "Metric"; });
+				ytitle = "Metrics grouped by resources";
+			}else {
+				var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "Resource"; });
+				ytitle = "Resources grouped by metrics";		
+			}
+
+			data.forEach(function(d) {
+				d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+			});
+
+			if(document.getElementById('grouptype').value == 'Metric'){
+		  		x0.domain(data.map(function(d) { return d.Metric; }));
+			}else{
+				x0.domain(data.map(function(d) { return d.Resource; }));
+			}
+			x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+			y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
+				
+		  	svg.append("g")
+				.attr("class", "x axis")
+				.attr("transform", "translate(0," + height + ")")
+				.call(xAxis)
+				.selectAll("text")  
+      		.style("text-anchor", "end")
+				.style("font-size","10px")
+      		.attr("transform", "rotate(-25)" );
+
+		  svg.append("g")
+				.attr("class", "y axis")
+				.call(yAxis)
+			 .append("text")
+				.attr("transform", "rotate(-90)")
+				.attr("y", 6)
+				.attr("dy", ".71em")
+				.style("text-anchor", "end")
+				.text(ytitle);
+
+			if(document.getElementById('grouptype').value == 'Metric'){
+			  var selction = svg.selectAll(".metric")
+					.data(data)
+				 	.enter().append("g")
+					.attr("class", "g")
+					.attr("transform", function(d) { return "translate(" + x0(d.Metric) + ",0)"; });
+			}else{
+				var selction = svg.selectAll(".resource")
+					.data(data)
+				 	.enter().append("g")
+					.attr("class", "g")
+					.attr("transform", function(d) { return "translate(" + x0(d.Resource) + ",0)"; });
+
+			}
+
+		  selction.selectAll("rect")
+				.data(function(d) { return d.ages; })
+			 .enter().append("rect")
+				.attr("width", x1.rangeBand())
+				.attr("x", function(d) { return x1(d.name)+10; })
+				.attr("y", function(d) { return y(d.value); })
+				.attr("height", function(d) { return height - y(d.value); })
+				.style("fill", function(d) { return color(d.name); })
+				.style("stroke", "black");
+
+		  var legend = svg.selectAll(".legend")
+				.data(ageNames.slice().reverse())
+				 .enter().append("g")
+				.attr("class", "legend")
+				.attr("transform", function(d, i) { return "translate(0," + i * 18 + ")"; });
+
+
+		  legend.append("rect")
+				.attr("x", width)
+				.attr("width", 12)
+				.attr("height", 15)
+				.style("fill", color);
+
+
+		  legend.append("text")
+				.attr("x", width - 2)
+				.attr("y", 9)
+				.attr("dy", ".35em")
+				.style("text-anchor", "end")
+				.style("font-size","12px")
+				.text(function(d) { return d; });
+
+
+		}
+
+		
+	 //<------------graphic with ajax and d3js-------->
+
+	 //<------------bootstrap table-------->
+		$(function () {
+			var $table = $('#events-table');
+			
+			$table.bootstrapTable( {data: {{{metrics}}} });
+
+			
+			$table.on('check.bs.table', function (e, row) {
+					selectedmetrics[row.id] = row;
+			});
+			$table.on('uncheck.bs.table', function (e, row) {
+					delete selectedmetrics[row.id];
+			});
+			$table.on('check-all.bs.table', function (e) {
+					var data = $table.bootstrapTable('getSelections');
+					$.each(data, function(i,item){
+                	selectedmetrics[item.id] = item; 
+        			});
+			});
+			$table.on('uncheck-all.bs.table', function (e) {
+                selectedmetrics = {};
+			});
+			  
+		});
+
+		//// It is not necessary because we use {explicitArray: false} when parse the XML
+		//// <th data-field="resource.name" data-sortable="true" data-formatter="ResourceNameFormatter">Resource name</th>
+		function ResourceNameFormatter(value, row){
+			//row contains the returned object which applied to current row.
+			return row.resource[0].name;
+		}
+		function ResourceTypeFormatter(value, row){
+			//row contains the returned object which applied to current row.
+			return row.resource[0].type;
+		}
+		//<------------bootstrap table-------->
+
+</script>
+
+<!-- script -->
+
+ </head>
+
+  <body>
+    <div class="container">
+		<button type = "submit" class = "btn btn-link" onclick="location.href='http://127.0.0.1:8083/availablecomponents';">
+			&lt;&lt;Back
+		</button>
+      <div class="page-header">
+        <h1>Monitoring Metrics</h1>
+        <p class="lead">Choose metrics and/or resources</p>
+      </div>
+		<div class="table-responsive"> 
+			<table id="events-table" class="table table-fixedheader table-condensed" data-pagination="true" data-show-columns="true" data-search ="true" data-sort-name="resource.name" >
+				<thead>
+				 <tr>
+					  <th data-field="state" data-checkbox="true"></th>
+					  <th data-field="name" data-sortable="true">Metric</th>
+					  <th data-field="resource.name" data-sortable="true">Resource name</th>
+					  <th data-field="resource.type" data-sortable="true">Resource type</th>
+				 </tr>
+				</thead>
+			</table>
+		</div>
+		<div class="row row-centered">
+			<div class="col-md-8" style="background-color: white; border: none">	
+				<div id="graphic" class="white"></div>
+			</div>
+      	<div class="col-md-4" style="background-color: white; border: none">
+					Graphic filters:
+					<div class="well"><p>Grouped by:</p>
+						<select id="grouptype" class="selectpicker" data-style="btn-primary">
+						  <option>Metric</option>
+						  <option>Resource</option>
+						</select> <!-- div well -->
+					</div>
+					<div class="well">Monitoring start date:
+					  <div id="datetimepickerstart" class="input-append date">
+						 <input id="datestart" name="datestart" data-format="yyyy-MM-dd" type="text" ></input>
+						 <span class="add-on">
+							<i data-time-icon="icon-time" data-date-icon="icon-calendar">
+							</i>
+						 </span>
+					  </div>
+				 	</div> <!-- div well -->
+					<div class="well">Monitoring end date:
+					  <div id="datetimepickerend" class="input-append">
+						 <input id="dateend" name="dateend" data-format="yyyy-MM-dd" type="text" ></input>
+						 <span class="add-on" >
+							<i data-time-icon="icon-time" data-date-icon="icon-calendar">
+							</i>
+						 </span>
+					  </div>
+			 		</div> <!-- div well -->
+					<button type="button" class="btn btn-sm btn-success" onclick="updateGraphic()">Apply filters</button>
+			</div> <!-- div col-md-4-->
+		</div> <!-- div row-->
+		<div class="well" style="background-color: white; border: none" >
+			<button type="button" class="btn btn-lg btn-primary">Download JSON</button>
+			<button type="button" class="btn btn-lg btn-info">Download CSV</button>
+		</div>
+    </div> <!-- /container -->
+  </body>
+</html>

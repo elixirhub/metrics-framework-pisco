@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css"/>
+<html>
+  <body>
+    <script language="javascript" defer="true">
+      <!--
+					 
+						var components={};
+						components['selectedcomponents']={};
+						var allcomponents = {}; 
+
+						function createselectedcomponents(id,name, dependencies, repository, parameterid, frequencyid, resourceid, 				executableid, enableid, installedid,checkid) 
+						{
+							parameter = document.getElementById(parameterid).value;
+							frequency = document.getElementById(frequencyid).value;
+							resource = document.getElementById(resourceid).value;
+							executable = document.getElementById(executableid).value;
+							enable = document.getElementById(enableid).value;
+							installed = document.getElementById(installedid).value;
+							check = document.getElementById(checkid).checked;
+							//alert(id + '-' + name + '-' + frequency + '-' + check );
+							if(check){
+								addcomponent(id, name, dependencies, repository, parameter, frequency, resource, executable, enable, installed);
+							}else{
+								delete allcomponents[id];
+							}
+							updateselectedcomponents();
+							document.getElementById("componentsinput").value = JSON.stringify(components);
+							
+						 }
+
+						function addcomponent(id, name, dependencies, repository, parameter, frequency, resource, executable, enable,  													installed)
+						{	
+							var component = {};
+							component['component']={};
+							component['component']['id']=id;
+							component['component']['name']=name;
+							component['component']['frequency']=frequency;
+							component['component']['resource']=resource;
+							component['component']['enable']=enable;
+							component['component']['installed']=installed;
+							component['component']['input']={};
+							component['component']['input']['parameter']=parameter;
+							component['component']['executable']=executable;	
+							component['component']['dependencies']={};	
+							component['component']['dependencies']['library']=dependencies;	
+							component['component']['repository']=repository;
+							allcomponents[id] = component;
+						}
+
+						function updateselectedcomponents(){
+							components['selectedcomponents']={};
+							for (var value in allcomponents){
+								if(components.selectedcomponents.length == undefined){components.selectedcomponents = [allcomponents[value]]; }	
+								else{ components.selectedcomponents.push(allcomponents[value]);	}	
+							}
+						}
+	  
+
+					 
+				 -->
+    </script>
+    <head>
+      <title>Manage Components</title>
+    </head>
+    <div id="header">
+      <div id="watermark" class="bgimgmanage"> </div>
+      <div id="subtitle">
+        <h1>Available Components</h1>
+      </div>
+    </div>
+    <div>
+      <table border="1">
+        <tr bgcolor="#0066FF">
+          <th>Id</th>
+          <th>Name</th>
+          <th>Dependencies</th>
+          <th>Repository</th>
+          <th>Input</th>
+          <th>Frequency</th>
+          <th>Resource</th>
+          <th>Executable</th>
+          <th>Eneable</th>
+          <th>Installed</th>
+          <th>Select</th>
+        </tr>
+        <tr>
+          <td>unique id</td>
+          <td>Metric name</td>
+          <td>libraries to install this component</td>
+          <td>https://github.com/metric-repository</td>
+          <td>
+            <input size="10" name="parameterunique id" type="text" id="parameterunique id" value="parameters to execute this component"/>
+          </td>
+          <td>
+            <input size="10" name="newfrequnique id" type="text" id="newfrequnique id" value="execution time interval"/>
+          </td>
+          <td>
+            <input size="10" name="resourceunique id" type="text" id="resourceunique id" value="database, software, computational, etc."/>
+          </td>
+          <td>
+            <input size="10" name="executableunique id" type="text" id="executableunique id" value=""/>
+          </td>
+          <td>
+            <input size="10" name="enableunique id" type="text" id="enableunique id" value="true"/>
+          </td>
+          <td>
+            <input size="10" name="installedunique id" type="text" id="installedunique id" value="false"/>
+          </td>
+          <td>
+            <input name="checkunique id" id="checkunique id" type="checkbox" onclick="createselectedcomponents('unique id','Metric name','libraries to install this component','https://github.com/metric-repository', 'parameterunique id', 'newfrequnique id','resourceunique id','executableunique id','enableunique id','installedunique id', 'checkunique id')"/>
+          </td>
+        </tr>
+        <tr>
+          <td>metrics-module-tweets-4J0BTmNQx</td>
+          <td>metrics-module-tweets</td>
+          <td>oauth</td>
+          <td>https://github.com/elixirhub/metrics-module-tweets.git</td>
+          <td>
+            <input size="10" name="parametermetrics-module-tweets-4J0BTmNQx" type="text" id="parametermetrics-module-tweets-4J0BTmNQx" value="github"/>
+          </td>
+          <td>
+            <input size="10" name="newfreqmetrics-module-tweets-4J0BTmNQx" type="text" id="newfreqmetrics-module-tweets-4J0BTmNQx" value="monthly"/>
+          </td>
+          <td>
+            <input size="10" name="resourcemetrics-module-tweets-4J0BTmNQx" type="text" id="resourcemetrics-module-tweets-4J0BTmNQx" value="software"/>
+          </td>
+          <td>
+            <input size="10" name="executablemetrics-module-tweets-4J0BTmNQx" type="text" id="executablemetrics-module-tweets-4J0BTmNQx" value=""/>
+          </td>
+          <td>
+            <input size="10" name="enablemetrics-module-tweets-4J0BTmNQx" type="text" id="enablemetrics-module-tweets-4J0BTmNQx" value="true"/>
+          </td>
+          <td>
+            <input size="10" name="installedmetrics-module-tweets-4J0BTmNQx" type="text" id="installedmetrics-module-tweets-4J0BTmNQx" value="false"/>
+          </td>
+          <td>
+            <input name="checkmetrics-module-tweets-4J0BTmNQx" id="checkmetrics-module-tweets-4J0BTmNQx" type="checkbox" onclick="createselectedcomponents('metrics-module-tweets-4J0BTmNQx','metrics-module-tweets','oauth','https://github.com/elixirhub/metrics-module-tweets.git', 'parametermetrics-module-tweets-4J0BTmNQx', 'newfreqmetrics-module-tweets-4J0BTmNQx','resourcemetrics-module-tweets-4J0BTmNQx','executablemetrics-module-tweets-4J0BTmNQx','enablemetrics-module-tweets-4J0BTmNQx','installedmetrics-module-tweets-4J0BTmNQx', 'checkmetrics-module-tweets-4J0BTmNQx')"/>
+          </td>
+        </tr>
+        <tr>
+          <td>metrics-module-tweets-EyBLa7N7l</td>
+          <td>metrics-module-tweets</td>
+          <td>oauth</td>
+          <td>https://github.com/elixirhub/metrics-module-tweets.git</td>
+          <td>
+            <input size="10" name="parametermetrics-module-tweets-EyBLa7N7l" type="text" id="parametermetrics-module-tweets-EyBLa7N7l" value="github"/>
+          </td>
+          <td>
+            <input size="10" name="newfreqmetrics-module-tweets-EyBLa7N7l" type="text" id="newfreqmetrics-module-tweets-EyBLa7N7l" value="monthly"/>
+          </td>
+          <td>
+            <input size="10" name="resourcemetrics-module-tweets-EyBLa7N7l" type="text" id="resourcemetrics-module-tweets-EyBLa7N7l" value="software"/>
+          </td>
+          <td>
+            <input size="10" name="executablemetrics-module-tweets-EyBLa7N7l" type="text" id="executablemetrics-module-tweets-EyBLa7N7l" value=""/>
+          </td>
+          <td>
+            <input size="10" name="enablemetrics-module-tweets-EyBLa7N7l" type="text" id="enablemetrics-module-tweets-EyBLa7N7l" value="true"/>
+          </td>
+          <td>
+            <input size="10" name="installedmetrics-module-tweets-EyBLa7N7l" type="text" id="installedmetrics-module-tweets-EyBLa7N7l" value="false"/>
+          </td>
+          <td>
+            <input name="checkmetrics-module-tweets-EyBLa7N7l" id="checkmetrics-module-tweets-EyBLa7N7l" type="checkbox" onclick="createselectedcomponents('metrics-module-tweets-EyBLa7N7l','metrics-module-tweets','oauth','https://github.com/elixirhub/metrics-module-tweets.git', 'parametermetrics-module-tweets-EyBLa7N7l', 'newfreqmetrics-module-tweets-EyBLa7N7l','resourcemetrics-module-tweets-EyBLa7N7l','executablemetrics-module-tweets-EyBLa7N7l','enablemetrics-module-tweets-EyBLa7N7l','installedmetrics-module-tweets-EyBLa7N7l', 'checkmetrics-module-tweets-EyBLa7N7l')"/>
+          </td>
+        </tr>
+        <tr>
+          <td>metrics-module-tweets-41hLa7Emx</td>
+          <td>metrics-module-tweets</td>
+          <td>oauth</td>
+          <td>https://github.com/elixirhub/metrics-module-tweets.git</td>
+          <td>
+            <input size="10" name="parametermetrics-module-tweets-41hLa7Emx" type="text" id="parametermetrics-module-tweets-41hLa7Emx" value="github"/>
+          </td>
+          <td>
+            <input size="10" name="newfreqmetrics-module-tweets-41hLa7Emx" type="text" id="newfreqmetrics-module-tweets-41hLa7Emx" value="monthly"/>
+          </td>
+          <td>
+            <input size="10" name="resourcemetrics-module-tweets-41hLa7Emx" type="text" id="resourcemetrics-module-tweets-41hLa7Emx" value="software"/>
+          </td>
+          <td>
+            <input size="10" name="executablemetrics-module-tweets-41hLa7Emx" type="text" id="executablemetrics-module-tweets-41hLa7Emx" value=""/>
+          </td>
+          <td>
+            <input size="10" name="enablemetrics-module-tweets-41hLa7Emx" type="text" id="enablemetrics-module-tweets-41hLa7Emx" value="true"/>
+          </td>
+          <td>
+            <input size="10" name="installedmetrics-module-tweets-41hLa7Emx" type="text" id="installedmetrics-module-tweets-41hLa7Emx" value="false"/>
+          </td>
+          <td>
+            <input name="checkmetrics-module-tweets-41hLa7Emx" id="checkmetrics-module-tweets-41hLa7Emx" type="checkbox" onclick="createselectedcomponents('metrics-module-tweets-41hLa7Emx','metrics-module-tweets','oauth','https://github.com/elixirhub/metrics-module-tweets.git', 'parametermetrics-module-tweets-41hLa7Emx', 'newfreqmetrics-module-tweets-41hLa7Emx','resourcemetrics-module-tweets-41hLa7Emx','executablemetrics-module-tweets-41hLa7Emx','enablemetrics-module-tweets-41hLa7Emx','installedmetrics-module-tweets-41hLa7Emx', 'checkmetrics-module-tweets-41hLa7Emx')"/>
+          </td>
+        </tr>
+        <tr>
+          <td>metrics-module-tweets-NJMD67VQl</td>
+          <td>metrics-module-tweets</td>
+          <td>oauth</td>
+          <td>https://github.com/elixirhub/metrics-module-tweets.git</td>
+          <td>
+            <input size="10" name="parametermetrics-module-tweets-NJMD67VQl" type="text" id="parametermetrics-module-tweets-NJMD67VQl" value="github"/>
+          </td>
+          <td>
+            <input size="10" name="newfreqmetrics-module-tweets-NJMD67VQl" type="text" id="newfreqmetrics-module-tweets-NJMD67VQl" value="monthly"/>
+          </td>
+          <td>
+            <input size="10" name="resourcemetrics-module-tweets-NJMD67VQl" type="text" id="resourcemetrics-module-tweets-NJMD67VQl" value="software"/>
+          </td>
+          <td>
+            <input size="10" name="executablemetrics-module-tweets-NJMD67VQl" type="text" id="executablemetrics-module-tweets-NJMD67VQl" value=""/>
+          </td>
+          <td>
+            <input size="10" name="enablemetrics-module-tweets-NJMD67VQl" type="text" id="enablemetrics-module-tweets-NJMD67VQl" value="true"/>
+          </td>
+          <td>
+            <input size="10" name="installedmetrics-module-tweets-NJMD67VQl" type="text" id="installedmetrics-module-tweets-NJMD67VQl" value="false"/>
+          </td>
+          <td>
+            <input name="checkmetrics-module-tweets-NJMD67VQl" id="checkmetrics-module-tweets-NJMD67VQl" type="checkbox" onclick="createselectedcomponents('metrics-module-tweets-NJMD67VQl','metrics-module-tweets','oauth','https://github.com/elixirhub/metrics-module-tweets.git', 'parametermetrics-module-tweets-NJMD67VQl', 'newfreqmetrics-module-tweets-NJMD67VQl','resourcemetrics-module-tweets-NJMD67VQl','executablemetrics-module-tweets-NJMD67VQl','enablemetrics-module-tweets-NJMD67VQl','installedmetrics-module-tweets-NJMD67VQl', 'checkmetrics-module-tweets-NJMD67VQl')"/>
+          </td>
+        </tr>
+        <tr>
+          <td>metrics-module-citation-4yyFa7VQx</td>
+          <td>metrics-module-citation</td>
+          <td>xml2js</td>
+          <td>https://github.com/elixirhub/metrics-module-citation.git</td>
+          <td>
+            <input size="10" name="parametermetrics-module-citation-4yyFa7VQx" type="text" id="parametermetrics-module-citation-4yyFa7VQx" value="swissprot,swiss prot,swiss-prot,UniProtKB,uniprot"/>
+          </td>
+          <td>
+            <input size="10" name="newfreqmetrics-module-citation-4yyFa7VQx" type="text" id="newfreqmetrics-module-citation-4yyFa7VQx" value="monthly"/>
+          </td>
+          <td>
+            <input size="10" name="resourcemetrics-module-citation-4yyFa7VQx" type="text" id="resourcemetrics-module-citation-4yyFa7VQx" value="database"/>
+          </td>
+          <td>
+            <input size="10" name="executablemetrics-module-citation-4yyFa7VQx" type="text" id="executablemetrics-module-citation-4yyFa7VQx" value=""/>
+          </td>
+          <td>
+            <input size="10" name="enablemetrics-module-citation-4yyFa7VQx" type="text" id="enablemetrics-module-citation-4yyFa7VQx" value="true"/>
+          </td>
+          <td>
+            <input size="10" name="installedmetrics-module-citation-4yyFa7VQx" type="text" id="installedmetrics-module-citation-4yyFa7VQx" value="false"/>
+          </td>
+          <td>
+            <input name="checkmetrics-module-citation-4yyFa7VQx" id="checkmetrics-module-citation-4yyFa7VQx" type="checkbox" onclick="createselectedcomponents('metrics-module-citation-4yyFa7VQx','metrics-module-citation','xml2js','https://github.com/elixirhub/metrics-module-citation.git', 'parametermetrics-module-citation-4yyFa7VQx', 'newfreqmetrics-module-citation-4yyFa7VQx','resourcemetrics-module-citation-4yyFa7VQx','executablemetrics-module-citation-4yyFa7VQx','enablemetrics-module-citation-4yyFa7VQx','installedmetrics-module-citation-4yyFa7VQx', 'checkmetrics-module-citation-4yyFa7VQx')"/>
+          </td>
+        </tr>
+        <tr>
+          <td>metrics-module-citation-4kMKaQVQx</td>
+          <td>metrics-module-citation</td>
+          <td>xml2js</td>
+          <td>https://github.com/elixirhub/metrics-module-citation.git</td>
+          <td>
+            <input size="10" name="parametermetrics-module-citation-4kMKaQVQx" type="text" id="parametermetrics-module-citation-4kMKaQVQx" value="swissprot,swiss prot,swiss-prot,UniProtKB,uniprot"/>
+          </td>
+          <td>
+            <input size="10" name="newfreqmetrics-module-citation-4kMKaQVQx" type="text" id="newfreqmetrics-module-citation-4kMKaQVQx" value="monthly"/>
+          </td>
+          <td>
+            <input size="10" name="resourcemetrics-module-citation-4kMKaQVQx" type="text" id="resourcemetrics-module-citation-4kMKaQVQx" value="database"/>
+          </td>
+          <td>
+            <input size="10" name="executablemetrics-module-citation-4kMKaQVQx" type="text" id="executablemetrics-module-citation-4kMKaQVQx" value=""/>
+          </td>
+          <td>
+            <input size="10" name="enablemetrics-module-citation-4kMKaQVQx" type="text" id="enablemetrics-module-citation-4kMKaQVQx" value="true"/>
+          </td>
+          <td>
+            <input size="10" name="installedmetrics-module-citation-4kMKaQVQx" type="text" id="installedmetrics-module-citation-4kMKaQVQx" value="false"/>
+          </td>
+          <td>
+            <input name="checkmetrics-module-citation-4kMKaQVQx" id="checkmetrics-module-citation-4kMKaQVQx" type="checkbox" onclick="createselectedcomponents('metrics-module-citation-4kMKaQVQx','metrics-module-citation','xml2js','https://github.com/elixirhub/metrics-module-citation.git', 'parametermetrics-module-citation-4kMKaQVQx', 'newfreqmetrics-module-citation-4kMKaQVQx','resourcemetrics-module-citation-4kMKaQVQx','executablemetrics-module-citation-4kMKaQVQx','enablemetrics-module-citation-4kMKaQVQx','installedmetrics-module-citation-4kMKaQVQx', 'checkmetrics-module-citation-4kMKaQVQx')"/>
+          </td>
+        </tr>
+        <tr>
+          <td>metrics-module-citation-EJOFpX4Ql</td>
+          <td>metrics-module-citation</td>
+          <td>xml2js</td>
+          <td>https://github.com/elixirhub/metrics-module-citation.git</td>
+          <td>
+            <input size="10" name="parametermetrics-module-citation-EJOFpX4Ql" type="text" id="parametermetrics-module-citation-EJOFpX4Ql" value="swissprot,swiss prot,swiss-prot,UniProtKB,uniprot"/>
+          </td>
+          <td>
+            <input size="10" name="newfreqmetrics-module-citation-EJOFpX4Ql" type="text" id="newfreqmetrics-module-citation-EJOFpX4Ql" value="monthly"/>
+          </td>
+          <td>
+            <input size="10" name="resourcemetrics-module-citation-EJOFpX4Ql" type="text" id="resourcemetrics-module-citation-EJOFpX4Ql" value="database"/>
+          </td>
+          <td>
+            <input size="10" name="executablemetrics-module-citation-EJOFpX4Ql" type="text" id="executablemetrics-module-citation-EJOFpX4Ql" value=""/>
+          </td>
+          <td>
+            <input size="10" name="enablemetrics-module-citation-EJOFpX4Ql" type="text" id="enablemetrics-module-citation-EJOFpX4Ql" value="true"/>
+          </td>
+          <td>
+            <input size="10" name="installedmetrics-module-citation-EJOFpX4Ql" type="text" id="installedmetrics-module-citation-EJOFpX4Ql" value="false"/>
+          </td>
+          <td>
+            <input name="checkmetrics-module-citation-EJOFpX4Ql" id="checkmetrics-module-citation-EJOFpX4Ql" type="checkbox" onclick="createselectedcomponents('metrics-module-citation-EJOFpX4Ql','metrics-module-citation','xml2js','https://github.com/elixirhub/metrics-module-citation.git', 'parametermetrics-module-citation-EJOFpX4Ql', 'newfreqmetrics-module-citation-EJOFpX4Ql','resourcemetrics-module-citation-EJOFpX4Ql','executablemetrics-module-citation-EJOFpX4Ql','enablemetrics-module-citation-EJOFpX4Ql','installedmetrics-module-citation-EJOFpX4Ql', 'checkmetrics-module-citation-EJOFpX4Ql')"/>
+          </td>
+        </tr>
+        <tr>
+          <td>metrics-module-citation-VJ6K67Nme</td>
+          <td>metrics-module-citation</td>
+          <td>xml2js</td>
+          <td>https://github.com/elixirhub/metrics-module-citation.git</td>
+          <td>
+            <input size="10" name="parametermetrics-module-citation-VJ6K67Nme" type="text" id="parametermetrics-module-citation-VJ6K67Nme" value="swissprot,swiss prot,swiss-prot,UniProtKB,uniprot"/>
+          </td>
+          <td>
+            <input size="10" name="newfreqmetrics-module-citation-VJ6K67Nme" type="text" id="newfreqmetrics-module-citation-VJ6K67Nme" value="monthly"/>
+          </td>
+          <td>
+            <input size="10" name="resourcemetrics-module-citation-VJ6K67Nme" type="text" id="resourcemetrics-module-citation-VJ6K67Nme" value="database"/>
+          </td>
+          <td>
+            <input size="10" name="executablemetrics-module-citation-VJ6K67Nme" type="text" id="executablemetrics-module-citation-VJ6K67Nme" value=""/>
+          </td>
+          <td>
+            <input size="10" name="enablemetrics-module-citation-VJ6K67Nme" type="text" id="enablemetrics-module-citation-VJ6K67Nme" value="true"/>
+          </td>
+          <td>
+            <input size="10" name="installedmetrics-module-citation-VJ6K67Nme" type="text" id="installedmetrics-module-citation-VJ6K67Nme" value="false"/>
+          </td>
+          <td>
+            <input name="checkmetrics-module-citation-VJ6K67Nme" id="checkmetrics-module-citation-VJ6K67Nme" type="checkbox" onclick="createselectedcomponents('metrics-module-citation-VJ6K67Nme','metrics-module-citation','xml2js','https://github.com/elixirhub/metrics-module-citation.git', 'parametermetrics-module-citation-VJ6K67Nme', 'newfreqmetrics-module-citation-VJ6K67Nme','resourcemetrics-module-citation-VJ6K67Nme','executablemetrics-module-citation-VJ6K67Nme','enablemetrics-module-citation-VJ6K67Nme','installedmetrics-module-citation-VJ6K67Nme', 'checkmetrics-module-citation-VJ6K67Nme')"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="createselectedcomponentsXML">
+      <h3>    </h3>
+      <form action="http://127.0.0.1:8081/createselectedcomponentsXML" method="post">
+        <fieldset>
+          <input type="hidden" id="componentsinput" name="componentsinput"/>
+          <input type="submit" value="Select these components"/>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

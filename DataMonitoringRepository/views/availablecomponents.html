@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" href="icons/metrics.ico"/>
+    <title>PIsCO</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link href="bootstrap/css/metrics-template.css" rel="stylesheet"/>
+    <script src="js/jquery.min.js"/>
+    <script src="bootstrap/js/bootstrap.min.js">
+      
+    </script>
+    <script type="text/javascript">
+				 jQuery(function ($) {
+					  $('.panel-heading span.clickable').on("click", function (e) {
+						   if ($(this).hasClass('panel-collapsed')) {
+						       // expand the panel
+						       $(this).parents('.panel').find('.panel-body').slideDown();
+						       $(this).removeClass('panel-collapsed');
+						       $(this).find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+						   }
+						   else {
+						       // collapse the panel
+						       $(this).parents('.panel').find('.panel-body').slideUp();
+						       $(this).addClass('panel-collapsed');
+						       $(this).find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+						   }
+					  });
+				 });
+				$(document).ready(function () {
+					 $('.panel-heading span.clickable').click();
+					 $('.panel div.clickable').click();
+				});
+
+				 	
+			</script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"/>
+            <span class="icon-bar"/>
+            <span class="icon-bar"/>
+          </button>
+          <a class="navbar-brand" href="#">PIsCO framework</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="page-header">
+        <h1>Collection of Biological Resource Metrics </h1>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-md-8">
+          <form method="post" action="http://127.0.0.1:8083/metricdetail">
+            <button type="summit" class="btn btn-link">Social Media (BLAST)
+							</button>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Provides evidence about the sharing or the discussing of specific resource into the Twitter Community</h3>
+                <span class="pull-right clickable">
+                  <i class="glyphicon glyphicon-chevron-up"> </i>
+                </span>
+              </div>
+              <div class="panel-body">
+                <p><b>API:</b> Twitter Streaming API</p>
+                <p><b>Query: </b>Keyword or comma-separated words</p>
+                <p><b>Output: </b>Total tweets scaned in a specific time interval (minute, day, month)</p>
+              </div>
+            </div>
+            <input type="hidden" id="name" name="name" value="Social Media"/>
+            <input type="hidden" id="description" name="description" value="Provides evidence about the sharing or the discussing of specific resource into the Twitter Community"/>
+            <input type="hidden" id="resourcename" name="resourcename" value="BLAST"/>
+            <input type="hidden" id="resourcetype" name="resourcetype" value="software"/>
+            <input type="hidden" id="idcomponent" name="idcomponent" value="metrics-module-tweets-4J0BTmNQx"/>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <p>Resource name: <b>BLAST</b></p>
+          <p>Resource type: <b>software</b></p>
+          <p>Monitoring records: <b>27</b></p>
+        </div>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-md-8">
+          <form method="post" action="http://127.0.0.1:8083/metricdetail">
+            <button type="summit" class="btn btn-link">Social Media (GGSEARCH,GLSEARCH)
+							</button>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Provides evidence about the sharing or the discussing of specific resource into the Twitter Community</h3>
+                <span class="pull-right clickable">
+                  <i class="glyphicon glyphicon-chevron-up"> </i>
+                </span>
+              </div>
+              <div class="panel-body">
+                <p><b>API:</b> Twitter Streaming API</p>
+                <p><b>Query: </b>Keyword or comma-separated words</p>
+                <p><b>Output: </b>Total tweets scaned in a specific time interval (minute, day, month)</p>
+              </div>
+            </div>
+            <input type="hidden" id="name" name="name" value="Social Media"/>
+            <input type="hidden" id="description" name="description" value="Provides evidence about the sharing or the discussing of specific resource into the Twitter Community"/>
+            <input type="hidden" id="resourcename" name="resourcename" value="GGSEARCH,GLSEARCH"/>
+            <input type="hidden" id="resourcetype" name="resourcetype" value="software"/>
+            <input type="hidden" id="idcomponent" name="idcomponent" value="metrics-module-tweets-EyBLa7N7l"/>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <p>Resource name: <b>GGSEARCH,GLSEARCH</b></p>
+          <p>Resource type: <b>software</b></p>
+          <p>Monitoring records: <b>16</b></p>
+        </div>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-md-8">
+          <form method="post" action="http://127.0.0.1:8083/metricdetail">
+            <button type="summit" class="btn btn-link">Social Media (FASTA programs,FASTA software)
+							</button>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Provides evidence about the sharing or the discussing of specific resource into the Twitter Community</h3>
+                <span class="pull-right clickable">
+                  <i class="glyphicon glyphicon-chevron-up"> </i>
+                </span>
+              </div>
+              <div class="panel-body">
+                <p><b>API:</b> Twitter Streaming API</p>
+                <p><b>Query: </b>Keyword or comma-separated words</p>
+                <p><b>Output: </b>Total tweets scaned in a specific time interval (minute, day, month)</p>
+              </div>
+            </div>
+            <input type="hidden" id="name" name="name" value="Social Media"/>
+            <input type="hidden" id="description" name="description" value="Provides evidence about the sharing or the discussing of specific resource into the Twitter Community"/>
+            <input type="hidden" id="resourcename" name="resourcename" value="FASTA programs,FASTA software"/>
+            <input type="hidden" id="resourcetype" name="resourcetype" value="software"/>
+            <input type="hidden" id="idcomponent" name="idcomponent" value="metrics-module-tweets-41hLa7Emx"/>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <p>Resource name: <b>FASTA programs,FASTA software</b></p>
+          <p>Resource type: <b>software</b></p>
+          <p>Monitoring records: <b>17</b></p>
+        </div>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-md-8">
+          <form method="post" action="http://127.0.0.1:8083/metricdetail">
+            <button type="summit" class="btn btn-link">Social Media (SAM)
+							</button>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Provides evidence about the sharing or the discussing of specific resource into the Twitter Community</h3>
+                <span class="pull-right clickable">
+                  <i class="glyphicon glyphicon-chevron-up"> </i>
+                </span>
+              </div>
+              <div class="panel-body">
+                <p><b>API:</b> Twitter Streaming API</p>
+                <p><b>Query: </b>Keyword or comma-separated words</p>
+                <p><b>Output: </b>Total tweets scaned in a specific time interval (minute, day, month)</p>
+              </div>
+            </div>
+            <input type="hidden" id="name" name="name" value="Social Media"/>
+            <input type="hidden" id="description" name="description" value="Provides evidence about the sharing or the discussing of specific resource into the Twitter Community"/>
+            <input type="hidden" id="resourcename" name="resourcename" value="SAM"/>
+            <input type="hidden" id="resourcetype" name="resourcetype" value="software"/>
+            <input type="hidden" id="idcomponent" name="idcomponent" value="metrics-module-tweets-NJMD67VQl"/>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <p>Resource name: <b>SAM</b></p>
+          <p>Resource type: <b>software</b></p>
+          <p>Monitoring records: <b>35</b></p>
+        </div>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-md-8">
+          <form method="post" action="http://127.0.0.1:8083/metricdetail">
+            <button type="summit" class="btn btn-link">Citation (BLAST)
+							</button>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository</h3>
+                <span class="pull-right clickable">
+                  <i class="glyphicon glyphicon-chevron-up"> </i>
+                </span>
+              </div>
+              <div class="panel-body">
+                <p><b>API:</b> NCBI API (E-utilities)</p>
+                <p><b>Query: </b>Keyword separated by comma. Includes all words and numbers in the title, abstract and article body, as well as in table and figure captions and in the article reference section</p>
+                <p><b>Output: </b>Total publication that includes the keyword</p>
+              </div>
+            </div>
+            <input type="hidden" id="name" name="name" value="Citation"/>
+            <input type="hidden" id="description" name="description" value="Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository"/>
+            <input type="hidden" id="resourcename" name="resourcename" value="BLAST"/>
+            <input type="hidden" id="resourcetype" name="resourcetype" value="software"/>
+            <input type="hidden" id="idcomponent" name="idcomponent" value="metrics-module-citation-4yyFa7VQx"/>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <p>Resource name: <b>BLAST</b></p>
+          <p>Resource type: <b>software</b></p>
+          <p>Monitoring records: <b>6</b></p>
+        </div>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-md-8">
+          <form method="post" action="http://127.0.0.1:8083/metricdetail">
+            <button type="summit" class="btn btn-link">Citation (GGSEARCH,GLSEARCH)
+							</button>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository</h3>
+                <span class="pull-right clickable">
+                  <i class="glyphicon glyphicon-chevron-up"> </i>
+                </span>
+              </div>
+              <div class="panel-body">
+                <p><b>API:</b> NCBI API (E-utilities)</p>
+                <p><b>Query: </b>Keyword separated by comma. Includes all words and numbers in the title, abstract and article body, as well as in table and figure captions and in the article reference section</p>
+                <p><b>Output: </b>Total publication that includes the keyword</p>
+              </div>
+            </div>
+            <input type="hidden" id="name" name="name" value="Citation"/>
+            <input type="hidden" id="description" name="description" value="Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository"/>
+            <input type="hidden" id="resourcename" name="resourcename" value="GGSEARCH,GLSEARCH"/>
+            <input type="hidden" id="resourcetype" name="resourcetype" value="software"/>
+            <input type="hidden" id="idcomponent" name="idcomponent" value="metrics-module-citation-4kMKaQVQx"/>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <p>Resource name: <b>GGSEARCH,GLSEARCH</b></p>
+          <p>Resource type: <b>software</b></p>
+          <p>Monitoring records: <b>1</b></p>
+        </div>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-md-8">
+          <form method="post" action="http://127.0.0.1:8083/metricdetail">
+            <button type="summit" class="btn btn-link">Citation (FASTA programs,FASTA software)
+							</button>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository</h3>
+                <span class="pull-right clickable">
+                  <i class="glyphicon glyphicon-chevron-up"> </i>
+                </span>
+              </div>
+              <div class="panel-body">
+                <p><b>API:</b> NCBI API (E-utilities)</p>
+                <p><b>Query: </b>Keyword separated by comma. Includes all words and numbers in the title, abstract and article body, as well as in table and figure captions and in the article reference section</p>
+                <p><b>Output: </b>Total publication that includes the keyword</p>
+              </div>
+            </div>
+            <input type="hidden" id="name" name="name" value="Citation"/>
+            <input type="hidden" id="description" name="description" value="Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository"/>
+            <input type="hidden" id="resourcename" name="resourcename" value="FASTA programs,FASTA software"/>
+            <input type="hidden" id="resourcetype" name="resourcetype" value="software"/>
+            <input type="hidden" id="idcomponent" name="idcomponent" value="metrics-module-citation-EJOFpX4Ql"/>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <p>Resource name: <b>FASTA programs,FASTA software</b></p>
+          <p>Resource type: <b>software</b></p>
+          <p>Monitoring records: <b>6</b></p>
+        </div>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-md-8">
+          <form method="post" action="http://127.0.0.1:8083/metricdetail">
+            <button type="summit" class="btn btn-link">Citation (SAM)
+							</button>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository</h3>
+                <span class="pull-right clickable">
+                  <i class="glyphicon glyphicon-chevron-up"> </i>
+                </span>
+              </div>
+              <div class="panel-body">
+                <p><b>API:</b> NCBI API (E-utilities)</p>
+                <p><b>Query: </b>Keyword separated by comma. Includes all words and numbers in the title, abstract and article body, as well as in table and figure captions and in the article reference section</p>
+                <p><b>Output: </b>Total publication that includes the keyword</p>
+              </div>
+            </div>
+            <input type="hidden" id="name" name="name" value="Citation"/>
+            <input type="hidden" id="description" name="description" value="Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository"/>
+            <input type="hidden" id="resourcename" name="resourcename" value="SAM"/>
+            <input type="hidden" id="resourcetype" name="resourcetype" value="software"/>
+            <input type="hidden" id="idcomponent" name="idcomponent" value="metrics-module-citation-VJ6K67Nme"/>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <p>Resource name: <b>SAM</b></p>
+          <p>Resource type: <b>software</b></p>
+          <p>Monitoring records: <b>12</b></p>
+        </div>
+      </div>
+      <button type="button" class="btn btn-lg btn-primary">Download all data</button>
+      <button type="button" class="btn btn-lg btn-info" onclick="location.href='http://127.0.0.1:8083/monitoringallmetrics';">Monitoring metrics</button>
+    </div>
+  </body>
+</html>

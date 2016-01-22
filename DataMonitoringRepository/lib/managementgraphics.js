@@ -127,7 +127,7 @@ graphicComponentbygroup: function (idsselectdcomponents, grouptype, datestart, d
 		});// db.monitoring end
 	}// main for end
 	
-}
+}  
  
 }
 /** Do accesible module Graphic */

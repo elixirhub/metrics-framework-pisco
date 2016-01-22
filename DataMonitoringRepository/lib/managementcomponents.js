@@ -56,11 +56,11 @@ var ManagementComponents = function () {
 					var enable = dataparsed.selectedcomponents.component[i].enable;
 					var dependencies = dataparsed.selectedcomponents.component[i].dependencies;
 					//console.log(dependencies);
+					var id = dataparsed.selectedcomponents.component[i].id;
 					if(installed == 'false' && enable == 'true') {
-						var id = dataparsed.selectedcomponents.component[i].id;
 						dataparsed.selectedcomponents.component[i].installed = 'true';
 						management.install(id,environmentconf.SOURCEPATH+'/'+id,repository,dependencies,dataparsed,callback);
-					}else{callback('This component '+name+ ' is already installed or is not available',true);}	
+					}else{callback('This component '+id+ ' is already installed or is not available',true);}	
 				 } // for end 
 			});//parser.parseString end
 		}); //fs.readFile end

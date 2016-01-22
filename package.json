@@ -18,7 +18,7 @@
   "private": true,
   "dependencies": {
     "body-parser": "latest",
-    "bootstrap": "lastest",
+    "bootstrap": "latest",
     "cheerio": "latest",
     "exec": "latest",
     "express": "latest",
@@ -32,7 +32,7 @@
     "jstoxml": "latest",
     "libxmljs": "latest",
     "libxslt": "latest",
-    "mongodb": "latest",
+    "mongodb": "^2.1.4",
     "monitor": "latest",
     "mv": "latest",
     "node-libcurl": "latest",

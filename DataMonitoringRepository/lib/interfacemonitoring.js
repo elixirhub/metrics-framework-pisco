@@ -82,20 +82,6 @@ graphicComponentbygroup: function (idsselectdsomponents, grouptype, datestart, d
 
 
 /**
-* get the number of monitoring records for a scpecific metric.
-* @param {string} idcomponent - compenent id to find into database.
-* @param {function} callback - Callback function (return true or false and msg execution).
-* @memberOf  MonitoringInterface
-*/
-getMonitoringrecordnumber: function (idcomponent, callback) {
-	managementgraphics.getMonitoringrecordnumber(idcomponent, function(records,response){
-		if(!response) {callback(null,false);}
-		else{callback(records,response);}
-	});
-}, 
-
-
-/**
  * create selectedcomponents XML from registry components data.
  * @param {JSON} newselectedcomponents - JSON structure with the selected components from manage selected components.
  * @param {function} callback - Callback function (return true or false and msg execution).

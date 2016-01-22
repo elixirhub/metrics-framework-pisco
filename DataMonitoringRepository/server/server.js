@@ -90,7 +90,7 @@ app.post('/createselectedcomponentsXML', function(req, res) {
 
 /////////////////////////////////////////*** manage HTML page to manage the available components ***//////////////
 
-app.get('/availablecomponents', function(req, res) {res.render('availablecomponents');
+app.get('/availablecomponents', function(req, res) {
 	interfacemonitoring.createavailablecomponentsHTML(function(msg,response){
 		if(!response) console.log(msg);
 		else {console.log(msg);res.render('availablecomponents');}
@@ -107,9 +107,9 @@ app.post('/metricdetail', function(req, res) {
 	var resourcename = req.body.resourcename;
 	var resourcetype = req.body.resourcetype;
 
-	var date = formatdate(new Date());
+	var date = formatdate(new Date()); 
 	if (typeof datestart == 'undefined'){datestart = date;} 
-	if (typeof dateend == 'undefined'){dateend = date;} 
+	if (typeof dateend == 'undefined'){dateend = date;}
 	interfacemonitoring.graphicComponentsdata(idcomponent,datestart,dateend,function (resources, xlabels, ytitle, title, response){
 		if(resources === null){res.render('availablecomponents.html');}
 		else{

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<availablecomponents>
+  <component>
+		<id>metrics-module-tweets-4J0BTmNQx</id>
+		<name>Social Media</name>
+		<description>Provides evidence about the sharing or the discussing of specific resource into the Twitter Community</description>
+		<detail>
+			<api>Twitter Streaming API</api>
+			<query>Keyword or comma-separated words</query>
+			<output>Total tweets scaned in a specific time interval (minute, day, month)</output>
+		</detail>
+		<frequency>hour</frequency>
+		<resource>
+			<name>BLAST</name>
+			<type>software</type>
+		</resource>
+		<repository>https://github.com/elixirhub/metrics-module-tweets.git</repository>	
+	</component>
+	<component>
+		<id>metrics-module-tweets-EyBLa7N7l</id>
+		<name>Social Media</name>
+		<description>Provides evidence about the sharing or the discussing of specific resource into the Twitter Community</description>
+		<detail>
+			<api>Twitter Streaming API</api>
+			<query>Keyword or comma-separated words</query>
+			<output>Total tweets scaned in a specific time interval (minute, day, month)</output>
+		</detail>		
+		<frequency>hour</frequency>
+		<resource>
+			<name>GGSEARCH,GLSEARCH</name>
+			<type>software</type>
+		</resource>
+		<repository>https://github.com/elixirhub/metrics-module-tweets.git</repository>	
+	</component>
+	<component>
+		<id>metrics-module-tweets-41hLa7Emx</id>
+		<name>Social Media</name>
+		<description>Provides evidence about the sharing or the discussing of specific resource into the Twitter Community</description>
+			<detail>
+				<api>Twitter Streaming API</api>
+				<query>Keyword or comma-separated words</query>
+				<output>Total tweets scaned in a specific time interval (minute, day, month)</output>
+			</detail>			
+		<frequency>hour</frequency>
+		<resource>
+			<name>FASTA programs,FASTA software</name>
+			<type>software</type>
+		</resource>
+		<repository>https://github.com/elixirhub/metrics-module-tweets.git</repository>	
+	</component>
+	<component>
+		<id>metrics-module-tweets-NJMD67VQl</id>
+		<name>Social Media</name>
+		<description>Provides evidence about the sharing or the discussing of specific resource into the Twitter Community</description>
+		<detail>
+				<api>Twitter Streaming API</api>
+				<query>Keyword or comma-separated words</query>
+				<output>Total tweets scaned in a specific time interval (minute, day, month)</output>
+		</detail>			
+		<frequency>hour</frequency>
+		<resource>
+			<name>SAM</name>
+			<type>software</type>
+		</resource>
+		<repository>https://github.com/elixirhub/metrics-module-tweets.git</repository>	
+	</component>
+	<component>
+		<id>metrics-module-citation-4yyFa7VQx</id>
+		<name>Citation</name>
+		<description>Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository</description>
+		<detail>
+				<api>NCBI API (E-utilities)</api>
+				<query>Keyword separated by comma. Includes all words and numbers in the title, abstract and article body, as well as in table and figure captions and in the article reference section</query>
+				<output>Total publication that includes the keyword</output>
+		</detail>	
+		<frequency>hour</frequency>
+		<resource>
+			<name>BLAST</name>
+			<type>software</type>
+		</resource>
+		<repository>https://github.com/elixirhub/metrics-module-citation.git</repository>	
+	</component>
+	<component>
+		<id>metrics-module-citation-4kMKaQVQx</id>
+		<name>Citation</name>
+		<description>Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository</description>
+		<detail>
+				<api>NCBI API (E-utilities)</api>
+				<query>Keyword separated by comma. Includes all words and numbers in the title, abstract and article body, as well as in table and figure captions and in the article reference section</query>
+				<output>Total publication that includes the keyword</output>
+		</detail>		
+		<frequency>hour</frequency>
+		<resource>
+			<name>GGSEARCH,GLSEARCH</name>
+			<type>software</type>
+		</resource>
+		<repository>https://github.com/elixirhub/metrics-module-citation.git</repository>	
+	</component>
+	<component>
+		<id>metrics-module-citation-EJOFpX4Ql</id>
+		<name>Citation</name>
+		<description>Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository</description>
+		<detail>
+				<api>NCBI API (E-utilities)</api>
+				<query>Keyword separated by comma. Includes all words and numbers in the title, abstract and article body, as well as in table and figure captions and in the article reference section</query>
+				<output>Total publication that includes the keyword</output>
+		</detail>	
+		<frequency>hour</frequency>
+		<resource>
+			<name>FASTA programs,FASTA software</name>
+			<type>software</type>
+		</resource>
+		<repository>https://github.com/elixirhub/metrics-module-citation.git</repository>	
+	</component>
+	<component>
+		<id>metrics-module-citation-VJ6K67Nme</id>
+		<name>Citation</name>
+		<description>Provides evidence of the resource impact in publications saved in Pubmed Central (PMC) repository</description>
+		<detail>
+				<api>NCBI API (E-utilities)</api>
+				<query>Keyword separated by comma. Includes all words and numbers in the title, abstract and article body, as well as in table and figure captions and in the article reference section</query>
+				<output>Total publication that includes the keyword</output>
+		</detail>			
+		<frequency>hour</frequency>
+		<resource>
+			<name>SAM</name>
+			<type>software</type>
+		</resource>
+		<repository>https://github.com/elixirhub/metrics-module-citation.git</repository>	
+	</component>
+</availablecomponents>

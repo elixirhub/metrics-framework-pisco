@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>Created with EditiX (http://www.editix.com) at Wed May 06 11:59:47 BST 2015</xs:documentation>
+	</xs:annotation>
+	<xs:element name="selectedcomponents">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="component">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" type="xs:string"/>
+							<xs:element name="name" type="xs:string"/>
+							<xs:element name="frequency" type="xs:string"/>
+							<xs:element name="resource" type="xs:string"/>
+							<xs:element name="enable" type="xs:string"/>
+							<xs:element name="installed" type="xs:string"/>
+							<xs:element name="input">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="executable" type="xs:string"/>
+							<xs:element name="dependencies">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="library" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="repository" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

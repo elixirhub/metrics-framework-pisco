@@ -1,0 +1,51 @@
+{
+  "name": "metricsinfrastructure",
+  "version": "0.1.0",
+  "description": "Framework Infrastructure to collect, install and execute metrics",
+  "author": "TGAC",
+  "contributors": [
+    {
+      "name": "Foo Bar",
+      "email": "foo.bar@example.com"
+    }
+  ],
+  "keywords": [
+    "metrics",
+    "components",
+    "registry",
+    "monitoring"
+  ],
+  "private": true,
+  "dependencies": {
+    "body-parser": "latest",
+    "bootstrap": "lastest",
+    "cheerio": "latest",
+    "exec": "latest",
+    "express": "latest",
+    "gith": "latest",
+    "github-api": "latest",
+    "github-download": "latest",
+    "google-search": "latest",
+    "hbs": "latest",
+    "js2xmlparser": "^1.0.0",
+    "jsdoc": "latest",
+    "jstoxml": "latest",
+    "libxmljs": "latest",
+    "libxslt": "latest",
+    "mongodb": "latest",
+    "monitor": "latest",
+    "mv": "latest",
+    "node-libcurl": "latest",
+    "node-schedule": "latest",
+    "npm": "latest",
+    "oauth": "latest",
+    "request": "latest",
+    "shortid": "latest",
+    "twitter": "latest",
+    "xml2js": "latest",
+    "xsd-schema-validator": "latest"
+  },
+  "subdomain": "metrics",
+  "analyze": true,
+  "license": "TGAC"
+}

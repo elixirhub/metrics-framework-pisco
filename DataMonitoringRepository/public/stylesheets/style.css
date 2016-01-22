@@ -1,0 +1,44 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+fieldset {
+    border: 0;
+}
+
+
+
+.bgimgmanage {
+    background-image: url('../images/managecomponents.jpg');
+   
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+}
+
+.bgimgselected {
+    background-image: url('../images/selectedcomponents.jpg');
+   
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+}
+
+div.columns       { width: 170px;  margin: 0;}
+div.columns div   { float: left; }
+div.grey          { background-color: #cccccc; }
+div.white         { background-color: #ffffff; width: 55px; height: 45px;}
+div.clear         { clear: both; }
+
+
+.button:hover {
+    border:1px solid #999;
+    color:#000;
+}
+

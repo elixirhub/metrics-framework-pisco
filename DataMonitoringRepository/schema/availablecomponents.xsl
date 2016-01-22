@@ -111,7 +111,7 @@
 					  </div>
 					</div> <!-- /.row -->
 				</xsl:for-each>
-				<button type="button" class="btn btn-lg btn-primary">Download all data</button>
+				<button type="button" class="btn btn-lg btn-primary">Download all data</button>&#160;
 				<button type="button" class="btn btn-lg btn-info" onclick="location.href='http://127.0.0.1:8083/monitoringallmetrics';">Monitoring metrics</button>
 			 </div><!-- /.container -->
 
